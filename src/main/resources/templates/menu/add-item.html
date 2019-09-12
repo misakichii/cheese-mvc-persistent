@@ -8,28 +8,14 @@
 
         <nav th:replace="fragments :: navigation"></nav>
 
-        <!--form method="post" th:object="${form}" actions="/menu/add-item">
-            <div class="form-group">
-                <label th:for="cheeseId">Cheese</label>
-                <select name="cheeseId">
-                    <option th:each="cheese : *{cheeses}"
-                            th:text="${cheese.name}"
-                            th:value="${cheese.id}"></option>
-                </select>
-            </div>
-            <input type="hidden" name="menuId" th:value="*{menu.id}" />
-            <input type="submit" value="Add Item" />
-        </form>
 
-            <br />
-            <br /-->
-
-            <form method="post" th:object="${form}"> <!-- actions="/menu/add-item"-->
+            <form method="post" th:object="${form}" actions="/menu/add-item">
                 <div class="form-group">
                     <label th:for="cheeseId">Cheese</label>
-                    <select th:field="*{cheeseId}">
+                    <select th:field="*{cheeseId}" name="cheeseId">
                     <!--select th:field="*{cheeseId}" name="cheeseId"-->
-                        <option th:each="cheese : ${form.cheeses}"
+                        <option
+                                th:each="cheese : *{cheeses}"
                                 th:value="${cheese.id}"
                                 th:text="${cheese.name}">
                         </option>

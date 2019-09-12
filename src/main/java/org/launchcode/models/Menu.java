@@ -13,18 +13,18 @@ import java.util.List;
 @Entity
 public class Menu {
 
-    @NotNull
-    @Size(min=3, max=15)
-    private String name;
-
     @Id
     @GeneratedValue
     private int id;
 
+    @NotNull
+    @Size(min=3, max=15)
+    private String name;
+
     //sets up half of many to many relationship
     @ManyToMany
-    private List<Cheese> cheeses = new ArrayList<>(); //hibernate will populate it based on the relationships setup in the controllers
-    //private List<Cheese> cheeses;
+   //private List<Cheese> cheeses = new ArrayList<>();
+    private List<Cheese> cheeses;
 
     public void addItem(Cheese item) {
         //adds item to the cheeses list

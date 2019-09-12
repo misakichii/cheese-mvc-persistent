@@ -13,7 +13,6 @@ public class Cheese {
 
     //id field should be unique and primary key in the database
     @Id
-    //hibernate (data layer) should generate this for me and manage it for me
     @GeneratedValue
     private int id;
 
@@ -25,9 +24,6 @@ public class Cheese {
     @Size(min=1, message = "Description must not be empty")
     private String description;
 
-    //private CheeseType type;
-    //hibernate will create a column named category_id & when cheese object is stored,
-    //this will contain id of its category object
     @ManyToOne
     private Category category;
 
@@ -40,6 +36,14 @@ public class Cheese {
     }
 
     public Cheese() { }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public int getId() {
         return id;
@@ -60,15 +64,5 @@ public class Cheese {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-
 
 }

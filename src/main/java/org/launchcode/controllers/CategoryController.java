@@ -27,7 +27,7 @@ public class CategoryController {
         return "category/index";
     }
 
-    @RequestMapping(value = "", method=RequestMethod.GET)
+    @RequestMapping(value = "add", method=RequestMethod.GET)
     public String add(Model model) {
         //shorthand code provided
         model.addAttribute(new Category());
@@ -36,9 +36,11 @@ public class CategoryController {
         return "category/add";
     }
 
-    @RequestMapping(value="", method=RequestMethod.POST)
+    @RequestMapping(value="add", method=RequestMethod.POST)
     public String add(Model model, @ModelAttribute @Valid Category category, Errors errors){
         if(errors.hasErrors()) {
+            model.addAttribute("category", new Category());
+            model.addAttribute("title", "Add Category");
             return "category/add";
         }else {
             //save the new Category object by calling below (does it work idk)
