@@ -8,8 +8,10 @@ import javax.transaction.Transactional;
 
 /**
  * Created by LaunchCode
+ * DAO- data access object
  */
 @Repository
 @Transactional
+//can't use primitive type must use Integer
 public interface CheeseDao extends CrudRepository<Cheese, Integer> {
 }
