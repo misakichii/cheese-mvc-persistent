@@ -7,15 +7,10 @@
         <h1 th:text="${title}">Default Title</h1>
         <nav th:replace="fragments :: navigation"></nav>
         <ul>
-            <!--li th:each="cheese : ${cheeses}" th:text="${cheese.name}"></li>
-        </ul>
-        <p th:unless="${cheeses} and ${cheeses.size()}"><i>No cheese yet</i></p>
-        <p><a th:href="'/menu/add-item/' + ${menuId}">Add Cheese</a></p>-->
             <li th:each="cheese : ${cheeses}" th:text="${cheese.name}"></li>
         </ul>
         <p th:unless="${cheeses} and ${cheeses.size()}"><i>No Cheeses yet</i></p>
         <p><a th:href="'/menu/add-item/' + ${menuId}">Add Cheese</a></p>
-
 
 </body>
 </html>

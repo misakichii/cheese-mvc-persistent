@@ -44,9 +44,6 @@ public class CheeseController {
     public String displayAddCheeseForm(Model model) {
         model.addAttribute("title", "Add Cheese");
         model.addAttribute(new Cheese());
-        //the line below is replaced due to deletion of CheeseType.java (line turns red)
-        //model.addAttribute("cheeseTypes", CheeseType.values());
-        //modify the appropriate line so that the model has attribute "categories" & value "categoryDao.findAll()
         model.addAttribute("categories", categoryDao.findAll());
         return "cheese/add";
     }

@@ -23,12 +23,16 @@ public class Menu {
 
     //sets up half of many to many relationship
     @ManyToMany
-   //private List<Cheese> cheeses = new ArrayList<>();
+   //private List<Cheese> cheeses = new ArrayList<>(); // Stand in a database stored it into a variable
     private List<Cheese> cheeses;
 
     public void addItem(Cheese item) {
         //adds item to the cheeses list
         cheeses.add(item);
+    }
+
+    public List<Cheese> getCheeses() {
+        return cheeses;
     }
 
     //empty constructor
@@ -44,10 +48,6 @@ public class Menu {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<Cheese> getCheeses() {
-        return cheeses;
     }
 
     public int getId() {

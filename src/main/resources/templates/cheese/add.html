@@ -21,7 +21,7 @@
     <div class="form-group">
         <!--This loops over the list of categories, using the "name" and "id" properties
          to setup each value". name="categoryId" indicates that the posted propert will be called categoryId-->
-        <label th:for="type">Type</label>
+        <label th:for="type">Category</label>
         <select name="categoryId">
             <option th:each="category : ${categories}"
                     th:text="${category.name}"

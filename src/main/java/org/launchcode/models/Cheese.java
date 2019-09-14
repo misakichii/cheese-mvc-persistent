@@ -37,6 +37,10 @@ public class Cheese {
 
     public Cheese() { }
 
+    public List<Menu> getMenus(){
+        return menus;
+    }
+
     public Category getCategory() {
         return category;
     }

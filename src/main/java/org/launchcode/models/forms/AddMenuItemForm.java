@@ -44,6 +44,10 @@ public class AddMenuItemForm {
         return cheeses;
     }
 
+    public void setCheeses(Iterable<Cheese> cheeses) {
+        this.cheeses = cheeses;
+    }
+
     public Menu getMenu() {
         return menu;
     }

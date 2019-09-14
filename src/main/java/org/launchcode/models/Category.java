@@ -22,8 +22,15 @@ public class Category {
     @JoinColumn(name = "category_id") //tells hibernate to use the category_id column to determine which cheese belongs to a category
     private List<Cheese> cheeses = new ArrayList<>();
 
-    public Category() {
+    public List<Cheese> getCheeses() {
+        return cheeses;
     }
+
+    public void setCheeses(List<Cheese> cheeses){
+        this.cheeses = cheeses;
+    }
+
+    public Category() {}
 
     public Category(String name){
         this.name = name;
@@ -40,4 +47,5 @@ public class Category {
     public int getId() {
         return id;
     }
+
 }
